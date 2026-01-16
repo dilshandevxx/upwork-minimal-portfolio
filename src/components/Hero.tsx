@@ -25,7 +25,7 @@ export function Hero() {
       <Navigation />
 
       {/* Main Content Area */}
-      <div className="relative z-10 flex-grow flex flex-col justify-end px-8 mt-20 lg:mt-0 pb-12">
+      <div className="relative z-10 flex-grow flex flex-col justify-end px-8 mt-24 lg:mt-32 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 w-full">
           
           {/* Main Title Area */}
