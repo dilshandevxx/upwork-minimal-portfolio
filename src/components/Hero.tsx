@@ -7,11 +7,8 @@ import { ProjectGrid } from "./ProjectGrid";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-const navItems = [
-  { name: "[ WORK ]", href: "#work", active: true },
-  { name: "INFO", href: "#info" },
-  { name: "ARCHIVE", href: "#archive" },
-];
+
+
 
 export function Hero() {
   const [time, setTime] = useState("");
@@ -30,26 +27,33 @@ export function Hero() {
     <main className="relative h-screen w-screen bg-[#050505] text-[#e5e5e5] overflow-hidden flex flex-col justify-between p-[1.5vw]">
       <GridOverlay />
 
+      <GridOverlay />
+
       {/* --- TOP ROW: Header/Nav --- */}
-      <header className="relative z-50 flex justify-between items-start font-mono text-[0.8vw] tracking-[0.15em] uppercase text-neutral-400">
-        <div className="flex flex-col">
+      <header className="relative z-50 w-full grid grid-cols-5 font-mono text-[0.8vw] tracking-[0.15em] uppercase text-neutral-400">
+        
+        {/* Brand - Col 1-3 */}
+        <div className="col-span-3 flex flex-col">
           <span className="text-[#e5e5e5] font-semibold">RYLAN PHILLIPS</span>
         </div>
 
-        <nav className="flex gap-[3vw]">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={cn(
-                "hover:text-white transition-colors duration-300",
-                item.active && "text-[#ccff00]"
-              )}
-            >
-              {item.name}
+        {/* Nav - Col 4 */}
+        <div className="col-span-1 pl-4 flex gap-[3vw]">
+            <Link href="#work" className="text-[#ccff00] hover:text-white transition-colors duration-300">
+              [ WORK ]
             </Link>
-          ))}
-        </nav>
+            <Link href="#info" className="hover:text-white transition-colors duration-300">
+              INFO
+            </Link>
+        </div>
+
+        {/* Nav - Col 5 */}
+        <div className="col-span-1 pl-4 flex">
+            <Link href="#archive" className="hover:text-white transition-colors duration-300">
+              ARCHIVE
+            </Link>
+        </div>
+
       </header>
 
 
